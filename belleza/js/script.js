@@ -6,12 +6,13 @@ function addRecord() {
     var tel_neg = $("#tel_neg").val();
     var resena_neg = $("#resena_neg").val();
 
-    // Add record
+
+    // Add record //crud agregar datos
     $.post("ajax/addRecord.php", {
         nombres_neg: nombres_neg,
         direccion_neg: direccion_neg,
         tel_neg: tel_neg,
-		resena_neg: resena_neg
+        resena_neg: resena_neg
     }, function (data, status) {
         // close the popup
         $("#add_new_record_modal").modal("hide");
@@ -49,6 +50,10 @@ function GetUserDetails(id) {
             $("#update_direccion_neg").val(user.direccion_neg);
             $("#update_tel_neg").val(user.tel_neg);
             $("#update_resena_neg").val(user.resena_neg);
+            var telefonosincero=user.tel_neg.substring(1,10);
+
+            htmlurl='<a class="btn btn-success" href="https://wa.me/593'+telefonosincero+'?text=me+gustaria+saber+el+precio+de" role="button">Whatsapp</a>'
+        $("#btnws").html(htmlurl);
         }
     );
     // Open modal popup
@@ -61,3 +66,41 @@ $(document).ready(function () {
     // READ recods on page load
     readRecords(); // calling function
 });
+
+
+function datos(){
+    $("#hidden_user_id").val(id);
+
+            
+
+                $.ajax( {
+                    url: 'ajax/readUserDetails.php',
+                    type: 'POST',
+                    cache: false,
+                    data: 'btn=info_cli' 
+                } ).done( function ( respuesta ) {
+                    
+                    var obj = JSON.parse(respuesta)
+                                
+                    
+                    $( "#nombre_cli" ).val( obj.nombre_razonsocial );
+                    $( "#codigo" ).val( obj.codigo );
+                    $( "#cedula_cli" ).val( obj.id );
+                    $( "#deuda_total" ).val( obj.deuda_total );
+                    $( "#deuda_cte" ).val( obj.deuda_cte );
+                    $( "#ciudad" ).val( obj.ubicacion );
+                    $( "#domicilio" ).val( obj.direccion_titular );
+                    $( "#telf1" ).val( obj.telefono_t1 );
+                    $( "#telf2" ).val( obj.telefono_t2 );
+                    $( "#telf3" ).val( obj.telefono_t3 );
+                    $( "#telf4" ).val( obj.telefono_t4 );
+                    
+                 htmlurl='<a class="h5" target="_blank" href="http://172.18.55.28/mineriaDatos/vista/agregar.php?cedula='+cedula+'&agente=admin">DataMining</a>'
+        
+            $("#url").html(htmlurl);
+                
+                
+                } );
+
+            
+}

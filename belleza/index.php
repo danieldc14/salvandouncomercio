@@ -124,7 +124,12 @@
           <label for="resena_neg">Reseña</label>
           <textarea style="text-transform:uppercase" id="update_resena_neg" class="form-control" readonly></textarea>
         </div>
+          <div class="form-group">
+      <center>
         
+                <div id="btnws"></div>
+         
+        </div>
       </div>
      
     </div>

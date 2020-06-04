@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -32,7 +33,9 @@
       <div class="card" style="width: 18rem;">
   <img src="imagenes/accesorios.jpg" class="card-img-top" alt="..." width="150" height="250">
   <div class="card-body">
-    <h5 class="card-title">Accesorios</h5>
+    <h5 class="card-title">Accesorios
+    
+    </h5>
     <a href="https://lacamaramilagro.com/milagros/accesorios/" class="btn btn-success">Haga clic aquí</a>
   </div>
 </div>
@@ -203,7 +206,7 @@
     <div class="col-sm">
        <div class="col-sm">
       <div class="card" style="width: 18rem;">
-  <img src="imagenes/mascotas.jpg" class="card-img-top" alt="..." width="150" height="250">
+  <img src="imagenes/mascotas.png" class="card-img-top" alt="..." width="150" height="250">
   <div class="card-body">
     <h5 class="card-title">Mascotas</h5>
     <a href="https://lacamaramilagro.com/milagros/mascotas/" class="btn btn-success">Haga clic aquí</a>
